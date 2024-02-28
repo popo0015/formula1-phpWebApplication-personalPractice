@@ -22,10 +22,31 @@
         </a>
     </x:slot:brand>
 
-    @foreach($navItems as $navItem)
-        <x-ui.navbar-item :route="$navItem['route']">{{ $navItem['title'] }}</x-ui.navbar-item>
-    @endforeach
+
 </x-ui.navbar>
+<nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen' ></i>
+        <span class="logo navLogo"><a href="#">F1JOY</a></span>
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href="#">F1JOY</a></span>
+                <i class='bx bx-x siderbarClose'></i>
+            </div>
+            <ul class="nav-links">
+                @foreach($navItems as $navItem)
+                    <x-ui.navbar-item :route="$navItem['route']">{{ $navItem['title'] }}</x-ui.navbar-item>
+                @endforeach
+            </ul>
+        </div>
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bx-moon moon'></i>
+                <i class='bx bx-sun sun'></i>
+            </div>
+        </div>
+    </div>
+</nav>
 
 {{-- Content --}}
 <section class="section">
@@ -38,27 +59,9 @@
 {{-- Footer --}}
 <footer class="footer">
     <div class="container">
-        <div class="columns is-multiline">
-
-            <div class="column has-text-centered">
-                <div>
-                    <a href="/" class="link">Home</a>
-                </div>
-            </div>
-
-            <div class="column has-text-centered">
-                <div>
-                    <a href="https://opensource.org/licenses/MIT" class="link">
-                        <i class="fa fa-balance-scale" aria-hidden="true"></i> License: MIT
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
         <div class="content is-small has-text-centered">
-            <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a> | adapted by <a href="https://github.com/dwaard">BugSlayer</a></p>
-            <p>TaskITEasy</p>
+            <p class="">Theme built by <a href="https://github.com/popo0015">Silvia Popova</a></p>
+            <p>F1JOY</p>
         </div>
     </div>
 </footer>
