@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>TaskITEasy</title>
+    <title>F1JOY</title>
 
     <link href="{{asset('css/index.css')}}" rel="stylesheet">
 
@@ -18,7 +18,7 @@
 <x-ui.navbar>
     <x:slot:brand>
         <a href="/" class="navbar-item">
-            <i class="fa-solid fa-list-check"></i>&nbsp;TaskITEasy
+            <i class="fa-solid fa-list-check"></i>&nbsp;F1JOY
         </a>
     </x:slot:brand>
 

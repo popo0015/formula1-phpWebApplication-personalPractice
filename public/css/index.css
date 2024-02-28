@@ -223,7 +223,7 @@ nav .nav-bar .logo a{
     flex-basis: calc(14.286% - 2px);
     margin: 1px 1px 12px 1px;
     font-weight: 700;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     color: #3b1e1e;
 }
