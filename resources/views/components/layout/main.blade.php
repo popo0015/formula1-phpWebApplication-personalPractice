@@ -4,68 +4,57 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>TaskITEasy</title>
+    <title>F1JOY</title>
 
-    <link href="{{asset('css/index.css')}}" rel="stylesheet">
-
-    {{-- Compiled assets --}}
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    {{-- Render additional styles from subviews and/or components --}}
+    {{-- Ensure Tailwind CSS is linked here --}}
+    @vite(['public/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
-<body>
+<body class="bg-body-color font-family: font-sans">
 {{-- Navigation bar --}}
-<x-ui.navbar>
-    <x:slot:brand>
-        <a href="/" class="navbar-item">
-            <i class="fa-solid fa-list-check"></i>&nbsp;TaskITEasy
-        </a>
-    </x:slot:brand>
-
-
-</x-ui.navbar>
-<nav>
-    <div class="nav-bar">
-        <i class='bx bx-menu sidebarOpen' ></i>
-        <span class="logo navLogo"><a href="#">F1JOY</a></span>
-        <div class="menu">
-            <div class="logo-toggle">
-                <span class="logo"><a href="#">F1JOY</a></span>
-                <i class='bx bx-x siderbarClose'></i>
+<nav class="bg-nav-color fixed list-none top-0 left-0 w-full z-10">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-4">
+                <!-- logo -->
+                <div>
+                    <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+                        <span class="font-bold">F1JOY</span>
+                    </a>
+                </div>
+                <!-- primary nav -->
+                <div class="hidden md:flex items-center space-x-1">
+                    @foreach($navItems as $navItem)
+                        <x-layout.navbar-item :route="$navItem['route']" class="py-5 px-3 text-gray-700 hover:text-gray-900">{{ $navItem['title'] }}</x-layout.navbar-item>
+                    @endforeach
+                </div>
             </div>
-            <ul class="nav-links">
-                @foreach($navItems as $navItem)
-                    <x-ui.navbar-item :route="$navItem['route']">{{ $navItem['title'] }}</x-ui.navbar-item>
-                @endforeach
-            </ul>
-        </div>
-        <div class="darkLight-searchBox">
-            <div class="dark-light">
-                <i class='bx bx-moon moon'></i>
-                <i class='bx bx-sun sun'></i>
+            <!-- secondary nav -->
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="" class="py-5 px-3">Login</a>
+                <a href="" class="py-2 px-3 bg-yellow-400 text-yellow-900 rounded hover:bg-yellow-300 transition duration-300">Signup</a>
             </div>
         </div>
     </div>
 </nav>
 
 {{-- Content --}}
-<section class="section">
-    <div class="container">
-        <x-ui.notifications></x-ui.notifications>
+<section>
+    <div class="container px-5 py-24 mx-auto">
         {{ $slot }}
     </div>
 </section>
 
 {{-- Footer --}}
-<footer class="footer">
-    <div class="container">
-        <div class="content is-small has-text-centered">
-            <p class="">Theme built by <a href="https://github.com/popo0015">Silvia Popova</a></p>
-            <p>F1JOY</p>
-        </div>
+<footer class="text-gray-600">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <span class="ml-3 text-xl">F1JOY</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2024 F1JOY —
+            <a href="https://github.com/popo0015" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Silvia Popova</a>
+        </p>
     </div>
 </footer>
-{{-- Render additional scripts from subviews and/or components --}}
-@stack('scripts')
 </body>
 </html>
