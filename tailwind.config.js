@@ -16,6 +16,7 @@ module.exports = {
                 'nav-color': '#f7cdcd',
                 'side-nav': '#010718',
                 'text-color': '#170202',
+                'formula1-red': '#ff1801',
             },
         },
     },
