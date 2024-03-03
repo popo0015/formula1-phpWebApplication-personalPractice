@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('origin');
-            $table->text('history');
-            $table->text('color_hex');
+            $table->text('origin');
+            $table->longText('history');
+            $table->text('summary');
+            $table->string('color_hex');
             $table->timestamps();
         });
     }
