@@ -2,17 +2,10 @@
 <x-layout.main>
     {{--
     TO-DO
-    - research if it's easy to put images into forms and then databases
-    - if not - save images in public/images and use proper naming conventions
-    - design the GPS, drivers and the teams table
-    - make 3 migrations - add an FK
-    - make seeders with some information
-    - loop through the database tables and vizualize them on the welcome page - simple cards
-    - play around with UI and semantic tags (sections) to position them properly
+    - save images in public/images and use proper naming conventions
+    - design the GPS table - make a migration, seeder, connections
     - develop routes for GPS, drivers and teams
     - think about implementing CRUD - maybe for the GPS (or for all 3)
-    - play around with vizuals
-    - update Wiki with new learnt info and the README.md
     - figure out a good ERD creator
     --}}
 
@@ -23,12 +16,12 @@
     </section>
 
     <main class="pt-10">
-        <section class="flex flex-wrap pr-5 pb-5">
+        <section class="flex overflow-x-auto pb-5" style="max-height: 380px;">
             @foreach($teams as $team)
-                <div class="text-text-color relative overflow-hidden bg-white w-96 h-45 p-5 rounded-lg shadow-lg">
+                <div class="text-text-color relative overflow-hidden bg-white min-w-96 h-45 p-10 rounded-lg shadow-lg mr-5">
                     <h1 class="text-xl font-bold text-gray-900">{{$team->name}}</h1>
                     <p style="color:#{{$team->color_hex}}">{{$team->origin}}</p>
-                    <p class="mb-4 mr-5">{{$team->history}}</p>
+                    <p class="mb-4">{{$team->history}}</p>
                     <div style="background-color:#{{$team->color_hex}}" class="absolute -top-0 -right-0 w-6 h-full scale-y-150 transform origin-bottom-right transition-all duration-300 ease-out hover:scale-125"></div>
                 </div>
             @endforeach
