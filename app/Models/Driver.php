@@ -6,17 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Comment extends Model
+class Driver extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'born', 'history', 'teams_id'];
+
     /**
-     * a Comment belongs to a Post
+     * a Task might belong to one Project
      *
      * @return BelongsTo
      */
-    public function post(): BelongsTo
+    public function project(): BelongsTo
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Team::class);
     }
 }

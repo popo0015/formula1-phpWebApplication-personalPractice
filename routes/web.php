@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,4 @@ use Illuminate\Support\Facades\Route;
 /*
  * The home routes
  */
-Route::view('/', 'welcome')->name('home');
+Route::get('/', [WelcomeController::class, 'index'])->name('home');
